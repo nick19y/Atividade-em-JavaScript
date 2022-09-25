@@ -1,0 +1,176 @@
+<!-- Ative as animações do Windows para tornar a navegação mais agradável -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Avaliação Prática de PAM I - Turma B</title>
+</head>
+
+<body>
+    <header>
+        <span class="app-title">Gestão de Repertório 🎶</span>
+        <a href="javascript:menuToggle()" id="menu">
+            <img src="img/menu.svg" alt="menu button">
+        </a>
+    </header>
+    <main>
+        <p class="description">
+            Aplicativo de auxílio para elaboração de repertório. O show precisa ser cronometrado e esse App vem para
+            auxiliar a banda exatamente nisso. Adicione ou remova músicas do show e verifique a duração total em minutos
+            e segundos.
+            <p>
+                O que fazer para tirar MB? 
+            </p>
+
+            <ul>
+                <li>
+                    Cadastro de objetos em Array. ✔
+                </li>
+                <li>
+                    Listagem dos objetos do Array. ✔
+                </li>
+                <li>
+                    Opção de remover música. ✔
+                </li>
+                <li>
+                    Colocar o seu nome completo no footer do App. ✔
+                </li>
+                <li>
+                    Mostrar a duração total em minutos:segundos do repertório cadastrado. ✔
+                </li>
+                <li>
+                    localStorage para manter a playlist criada mesmo fechando o aplicativo ou navegador. ✔
+                </li>
+            </ul>
+        </p>
+        
+
+        <section class="content">
+            <h1>
+                ▶ Músicas programadas (<span id="duracao-total"></span>)
+            </h1>
+            <div class="list">
+                <!-- <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="name">NOME DA MÚSICA</span>
+                    <span class="duration">(125s)</span>
+                    <a href="javascript:removerMusica(1)">
+                        <img src="img/trash.svg" alt="remove music">
+                    </a>
+                </div> -->
+            </div>
+        </section>
+
+    </main>
+    <aside>
+        <h1>Nova música</h1>
+        <form onsubmit="return false;" autocomplete="off">
+            <div class="field">
+                <input type="text" id="txtmusica" name="txtmusica">
+                <label for="txtmusica">Nome da música</label>
+
+            </div>
+            <div class="field">
+                <input type="number" id="txtduracao" name="txtduracao" min="1">
+                <label for="txtduracao">Duração em segundos</label>
+
+            </div>
+            <div class="field">
+                <button id="btn-adicionar">Adicionar</button>
+            </div>
+        </form>
+        <a href="javascript:menuToggle()" class="close"><img src="img/close.svg" alt="Close button"></a>
+    </aside>
+    <footer>
+        <span>Professor: <b>Giovanni Guarnieri</b></span>
+        <span class="student">Aluno: <b>Nícolas de Godoi Carlos Pinto</b></span>
+    </footer>
+</body>
+<script src="js/navigation.js"></script>
+<script src="js/resolucao.js"></script>
+
+</html>
+<!-- 
+    :( mevoj ,adanroj asse rop odagirbO
+    !edadivita an etros aoB
+-->
